@@ -1,0 +1,10 @@
+bundle.js
+node_modules/
+target/
+build/
+.idea/
+*.iml
+*.class
+*.jar
+*.war
+*.ear
