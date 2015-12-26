@@ -3,8 +3,8 @@ var Link = require('react-router').Link
 var Select = require('react-select');
 
 var options = [
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two' }
+    { value: '1xy86vuz17gf', label: 'One of the longest string you will ever see in a dropdown' },
+    { value: '2xy86vuz17gf', label: 'Two is always better than one, or is it really. now that is a question' }
 ];
 
 module.exports = React.createClass({
@@ -15,6 +15,10 @@ module.exports = React.createClass({
 
   linkOnClick: function() {
     this.props.history.pushState(null, `/3`);
+  },
+
+  renderOption: function(option) {
+  		return <div className="sidebar-dropdow-option-wrap">{option.label} ?</div>;
   },
 
   render : function() {
@@ -28,8 +32,9 @@ module.exports = React.createClass({
             <div id="sidebar-dropdown">
             <Select
               name="form-field-name"
-              value="one"
+              value=""
               options={options}
+              optionRenderer={this.renderOption}
               onChange={this.logChange}
             />
             </div>
